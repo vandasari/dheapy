@@ -1,4 +1,3 @@
-from exceptions import Empty
 from typing import Any, List, Optional, Union, Tuple
 
 
@@ -116,7 +115,7 @@ class DHeap:
     def _viewtop(self) -> Any:
         """Return but do not remove (k, v) tuple with minimum key."""
         if self.is_empty():
-            raise Empty("Priority queue is empty")
+            raise Exception("Priority queue is empty")
 
         item = self._data[0]
         return (item._key, item._value)
@@ -135,7 +134,7 @@ class DHeap:
     def _pop(self) -> Any:
         """Remove and return (k, v) tuple with minimum key."""
         if self.is_empty():
-            raise Empty("Priority queue is empty")
+            raise Exception("Priority queue is empty")
 
         self._swap(0, len(self._data) - 1)  # put minimum item at the end
         item = self._data.pop()  # and remove it from the list
@@ -209,7 +208,7 @@ class DHeap:
     # Time complexity: O(1)
     def peek(self) -> Any:
         if self.is_empty():
-            raise Empty("Priority queue is empty.")
+            raise Exception("Priority queue is empty.")
 
         if self._variant == "min":
             return self._viewtop()[0] * (-1), self._viewtop()[1]
@@ -219,7 +218,7 @@ class DHeap:
     # Time complexity: O(log n) -> amortized with dynamic array
     def delete(self) -> Any:
         if self.is_empty():
-            raise Empty("Priority queue is empty")
+            raise Exception("Priority queue is empty")
 
         if len(self._data) == 1:
             last_item = self._data.pop()
@@ -236,7 +235,7 @@ class DHeap:
     # Time complexity: O(1)
     def show(self, indx: int) -> Any:
         if self.is_empty():
-            raise Empty("Priority queue is empty")
+            raise Exception("Priority queue is empty")
 
         if not isinstance(indx, int):
             raise TypeError("Index must be of integer type")
