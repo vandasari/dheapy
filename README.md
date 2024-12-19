@@ -5,13 +5,13 @@
 The branching factor of a tree is the maximum number of children a node can have.
 
 A $2$-ary heap or binary heap has a branching factor of $2$:
-![BinaryHeap](https://github.com/vandasari/dheapy/blob/main/images/ex1_binary_tree.png?raw=true)
+![Binary Heap](https://raw.githubusercontent.com/vandasari/dheapy/main/images/ex1_binary_tree.png)
 
 A $3$-ary heap or ternary heap has a branching factor of $3$:
-![TernaryHeap](https://github.com/vandasari/dheapy/blob/main/images/ex2_ternary_tree.png?raw=true)
+![Ternary Heap](https://raw.githubusercontent.com/vandasari/dheapy/main/images/ex2_ternary_tree.png)
 
 A $4$-ary heap or quaternary heap has a branching factor of $4$:
-![QuarternaryHeap](https://github.com/vandasari/dheapy/blob/main/images/ex3_quarternary_tree.png?raw=true)
+![Quarternary Heap](https://raw.githubusercontent.com/vandasari/dheapy/main/images/ex3_quarternary_tree.png)
 
 `dheapy` is array-based and adaptable, where arbitrary items can be removed, updated, and displayed on the go.
 
@@ -154,7 +154,7 @@ Highest priority: (3, 'BOS')
 
 Our ternary min-heap will look like as follows:
 
-![Figure 1](https://github.com/vandasari/dheapy/blob/main/images/Figure_1.png?raw=true)
+![Figure 1](https://raw.githubusercontent.com/vandasari/dheapy/main/images/Figure_1.png)
 
 Our data will be stored in a list in an arrangement such that it starts from the root node `(3, 'BOS')`. The root's children will be stored subsequently, starting from the most left child `(5, 'DOH')` traversing horizontally through all children until the most right child `(9, 'BSL')`. Thus data in the list will be stored as `[(3, 'BOS'), (5, 'DOH'), (8.7, 'AUH'), (9, 'BSL')]`. Then children of the most left child `(5, 'DOH')` will be stored next, followed with children of `(8.7, 'AUH')`, and so on. This can be verified by using the `show(i)` module where `i` is an index number of the item position. For example, to obtain item at index $0$ or the root node, by either directly displaying like:
 
@@ -227,7 +227,7 @@ Highest priority: (5, 'DOH')
 ```
 
 and our structure now will look like:
-![Figure 2](https://github.com/vandasari/dheapy/blob/main/images/Figure_2.png?raw=true)
+![Figure 2](https://raw.githubusercontent.com/vandasari/dheapy/main/images/Figure_2.png)
 
 - Use `removeitem(k, v)` to remove an item from our priority queue, where `k` is a key or priority number and `v` is its element. For example, to remove `(8.7, 'AUH')`:
 
@@ -243,7 +243,7 @@ Removed: (8.7, 'AUH')
 ```
 
 Our structure now will look like:
-![Figure 3](https://github.com/vandasari/dheapy/blob/main/images/Figure_3.png?raw=true)
+![Figure 3](https://raw.githubusercontent.com/vandasari/dheapy/main/images/Figure_3.png)
 
 - To replace an item with a new one, use the `update()` module. For example, to replace the item `(8, AMS)` with `(3.3, 'SFO')`:
 
@@ -266,7 +266,7 @@ Highest priority: (3.3, 'SFO')
 ```
 
 Our structure now will look like:
-![Figure 4](https://github.com/vandasari/dheapy/blob/main/images/Figure_4.png?raw=true)
+![Figure 4](https://raw.githubusercontent.com/vandasari/dheapy/main/images/Figure_4.png)
 
 - Finally, to check if an item is in our priority queue, we can use the module `contains(k, v)` with `k` is the key or priority number of the item and `v` is its element:
 
