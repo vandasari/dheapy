@@ -30,12 +30,32 @@ class DHeap:
 
     def __init__(self, branching_factor: int = 2, variant: str = "max") -> None:
         """Create a new empty Priority Queue."""
+        if not isinstance(branching_factor, int):
+            raise ValueError("Please enter an integer number for branching factor")
+
         if branching_factor < 2:
             raise ValueError("Branching factor must be greater than 1.")
 
         self._data: List[Any] = []
-        self._D = branching_factor
-        self._variant = variant
+
+        if branching_factor is None:
+            self._D: int = 2
+        else:
+            self._D = branching_factor
+
+        if variant is None:
+            self._variant: str = "max"
+        elif variant == "max":
+            self._variant = "max"
+        elif variant == "min":
+            self._variant = "min"
+        else:
+            raise ValueError(
+                "Unknown variant type. Please enter either 'max' or 'min' for variant type."
+            )
+
+    def __repr__(self):
+        return f"Priority Queue with {self._D} branching factor and {self._variant}-heap variant"
 
     # Time complexity: O(1)
     def __len__(self) -> int:
