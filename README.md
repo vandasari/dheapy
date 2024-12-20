@@ -38,22 +38,33 @@ None.
     - `branching_factor`: `int`; default = `2`
     - `variant`: `str`, either `'max'` or `'min'`; default = `'max'`
 
+    To import `DHeap` class:
+
+    ```
+    from dheapy import DHeap
+    ```
+
 2.  `heapsorted(object, branching_factor=2, variant='max')`
     Function for sorting arrays that is based on the heap sort algorithm.
     Parameters:
+
     - `object`: array or iterable
     - `branching_factor`: `int`; default = `2`
     - `variant`: `str`, either `'max'` or `'min'`; default = `'max'`
 
+    To import `heapsorted()` function
+
+    ```
+    from dheapy import heapsorted
+    ```
+
 To create an empty priority queue with branching factor 3 and min-heap variant:
 
 ```
-from dheapy import DHeap
-
 P = DHeap(3, 'min')
 ```
 
-then the following operations can be performed:
+The following are operations that can be performed with `DHeap` class:
 
 | **Operation**                  | **Description**                                                                                                                                                                                                                                                                  | **Object Returned** |
 | ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- |
@@ -67,19 +78,20 @@ then the following operations can be performed:
 | `P.contains(k, v)`             | returns `True` if priority queue `P` contains an item with priority number `k` with element `v`.                                                                                                                                                                                 | `True` or `False`   |
 | `P.show(i)`                    | returns the item at index `i`.                                                                                                                                                                                                                                                   | `(k, v)`            |
 
-Time complexity of each operation:
+## Performance
 
 | **Operation**                  | **Time Complexity** |
 | ------------------------------ | ------------------- |
 | `P.insert(k,v)`                | O(log n)            |
 | `P.peek()`                     | O(1)                |
-| `P.delete()`                   | O(log on)           |
-| `P.removeitem(k, v)`           | O(log on)           |
-| `P.update(old_item, new_item)` | O(log on)           |
+| `P.delete()`                   | O(log n)            |
+| `P.removeitem(k, v)`           | O(log n)            |
+| `P.update(old_item, new_item)` | O(log n)            |
 | `len(P)`                       | O(1)                |
 | `is_empty(P)`                  | O(1)                |
 | `P.contains(k, v)`             | O(1)                |
 | `P.show(i)`                    | O(1)                |
+| function `heapsorted()`        | O(n log n)          |
 
 ## Example for `DHeap` class
 
@@ -103,6 +115,18 @@ branching_factor = 3
 variant = 'min'
 
 P = DHeap(branching_factor, variant)
+```
+
+- To verify if parameters are correct, we print the object we just created
+
+```
+print(P)
+```
+
+which will result in
+
+```
+Priority Queue with 3 branching factor and min-heap
 ```
 
 - Check if the priority queue is empty:
