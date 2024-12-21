@@ -314,19 +314,23 @@ class DHeap:
         return True if ht else False
 
 
-def heapsorted(toSort: List, branching_factor: int = 2, variant: str = "max") -> List:
-    if not isinstance(toSort, (list, tuple)):
-        raise TypeError("Object to sort must be iterable")
-
+def heapsorted(theSeq: List, branching_factor: int = 2, variant: str = "max") -> List:
+    n = len(theSeq)
     h = DHeap(branching_factor, variant)
 
-    for i in toSort:
-        h.insert(i[0], i[1])
+    for item in theSeq:
+        h.insert(item[0], item[1])
 
-    newArray = []
+    if variant == "min":
+        start = n - 1
+        end = -1
+        increment = -1
+    else:
+        start = 0
+        end = n
+        increment = 1
 
-    while not h.is_empty():
-        newArray.append(h.peek())
-        h.delete()
+    for i in range(start, end, increment):
+        theSeq[i] = h.delete()
 
-    return newArray
+    return theSeq
